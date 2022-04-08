@@ -6,21 +6,29 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.1",
     "@types/node": "^16.11.26",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "enzyme": "^3.11.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
-    "typescript": "^4.6.3",
+    "sass": "^1.50.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "eslint:fix": "eslint src --ext .ts,.tsx --fix",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:updateSnapshots": "jest --updateSnapshot",
     "eject": "react-scripts eject"
+  },
+  "prettier": {
+    "singleQuote": false,
+    "printWidth": 100
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +46,40 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.11",
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "jest": "^27.5.1",
+    "prettier": "2.6.2",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3",
+    "typescript-eslint-parser": "^22.0.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "tsx"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testMatch": [
+      "<rootDir>/test/**/?(*.)(spec|test).ts?(x)"
     ]
   }
 }
